@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT Telematics Troubleshooting Tool</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/53d98163df.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="nav">
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a class="nav__logo--link" href="">
+                    <img class="logo" src="./assets/napue-logo.png" alt="">
+                </a>
+            </div>
+            <div class="nav__middle">
+                <h4 class="search">Search Beats</h4>
+                <input class="search__bar" type="text">
+                <i id="magnify" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="nav__links">
+                <ul>
+                    <li class="hideOnMobile">
+                        <a class="nav__link" href="#beats">
+                            Beats
+                        </a class="nav__link">
+                    </li>
+                    <li class="hideOnMobile">
+                        <a class="nav__link" href="#services">
+                            Forum
+                        </a class="nav__link">
+                    </li>                    
+                    <li class="hideOnMobile">
+                        <a class="nav__link" href="#contact">
+                            Notifications
+                        </a class="nav__link">
+                    </li>
+                    <li class="hideOnMobile">
+                        <a class="nav__link anchor" href="#contact">
+                            Sign In
+                        </a class="nav__link">
+                    </li>
+                    <li class="nav__menu">
+                        <a class="nav__button" onclick=showSidebar() href="#contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                        </a class="nav__link">
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <ul class="sidebar-links">
+                    
+
+                        <li class="sidebar-button">
+                            <a class="sidebar__link" onclick=hideSidebar() href="#contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                            </a class="sidebar__link">
+                        </li>
+                    
+                    <li>
+                        <a class="sidebar__link" href="#beats">
+                            Beats
+                        </a class="sidebar__link">
+                    </li>
+                    <li>
+                        <a class="sidebar__link" href="#services">
+                            Forum
+                        </a class="sidebar__link">
+                    </li>                    
+                    <li>
+                        <a class="sidebar__link" href="#contact">
+                            Notifications
+                        </a class="sidebar__link">
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="box__container">
+           <div class="music">
+                <!-- MUSIC PLAYER -->
+                <div class="music-player">
+                <!-- HEADER -->
+                    <div class="header">
+                        <i class="fas fa-music"></i>
+                        <h2>Now Playing</h2>
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <!-- SONG DETAILS-->
+                    <div class="details">
+                        <img class="song-photo" src="./assets/black-man.png" alt="">
+                        <p class="title">Song Title</p>
+                    </div>
+                    <!-- PLAYER CONTROLS  -->
+                    <div class="player-controls">
+                        <div class="song-timer">
+                            <span class="current-time">00:12</span>
+                            <span class="duration-time">00:10</span>
+                        </div>
+                        <!-- SONG DURATION  -->
+                        <div class="duration">
+                            <input 
+                            type="range" 
+                            class="duration-slider"
+                            min="0"
+                            max="100"
+                            value="0">
+                        </div>
+                        <!-- BUTTONS  Play Next and Previous-->
+                        <div class="buttons">
+                            <button class="previous">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="play">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="next">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        <!-- AUTOPLAY -->
+                        <button class="play-all">
+                            Play All
+                            <i class="fa-duotone fa-solid fa-arrows-rotate"></i>
+                        </button>
+                        <!-- VOLUME  -->
+                        <div class="volume">
+                                <p id="show-volume">
+                                    50
+                                </p>
+                                <i id="volume-icon" class="fa-solid fa-volume">Vol</i>
+                                <div id="volume">
+                                    <input 
+                                    type="range" 
+                                    class="volume-slider"
+                                    min="0"
+                                    max="100"
+                                    value="50"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PLAYLIST -->
+                        <div class="music-playlist">
+                            <!-- HEADER -->
+                            <div class="playlist-header">
+                                <i class="fas fa-music"></i>
+                                <h2>Playlist</h2>
+                                <i class="fa-solid fa-x"></i>
+                            </div>
+                            <!-- PLAYLIST ITEM  -->
+                            <div class="playlist__items">
+                                <div class="playlist">
+                                    <span class="song-index">1</span>
+                                    <p class="single-song">Song One</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+
+        </script>
+</body>
+
+
+<footer class="footer__container">
+    <a class="footer__link" href="">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a class="footer__link" href="">
+        <i class="fa-brands fa-twitter"></i>
+    </a>
+    <a class="footer__link" href="">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a class="footer__link" href="">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+</footer>
+</html>

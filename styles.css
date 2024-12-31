@@ -234,14 +234,16 @@ button {
     border:none;
     font-size: 16px;
     padding:0 40px;
-    background-color: white;
+    background-color:rgba(128, 128, 128, 0.418);
     cursor: pointer;
+    color: black;
 }
 .play {
     font-size:24px;
     background-color: blue;
     padding:16px 32px;
     border: 2px solid black;
+    color:white;
 }
 /* AUTTOPLAY  */
 .volume {
